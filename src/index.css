@@ -40,13 +40,27 @@
     content: '';
     width: 32px;
     height: 32px;
-    border: 2px solid #ff0000;
+    border: 1px solid #8B0000;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     animation: cursor-animation 0.3s infinite alternate;
+    mix-blend-mode: difference;
+  }
+
+  /* Cursor dot */
+  body::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #8B0000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
     mix-blend-mode: difference;
   }
 

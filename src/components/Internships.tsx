@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
+import RegistrationForm from "./RegistrationForm";
 
 const internships = [
   {
@@ -30,6 +32,8 @@ const internships = [
 ];
 
 const Internships = () => {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   return (
     <section id="internships" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -74,7 +78,12 @@ const Internships = () => {
                     </span>
                   ))}
                 </div>
-                <Button className="w-full hover-scale">Register Now</Button>
+                <Button 
+                  className="w-full hover-scale"
+                  onClick={() => setIsRegistrationOpen(true)}
+                >
+                  Register Now
+                </Button>
               </Card>
             </motion.div>
           ))}
@@ -94,6 +103,11 @@ const Internships = () => {
           </p>
         </motion.div>
       </div>
+
+      <RegistrationForm 
+        open={isRegistrationOpen} 
+        onOpenChange={setIsRegistrationOpen}
+      />
     </section>
   );
 };

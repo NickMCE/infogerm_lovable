@@ -5,6 +5,7 @@ import Bootcamps from "@/components/Bootcamps";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 
@@ -38,6 +39,7 @@ const Index = () => {
       <Internships />
       <Bootcamps />
       <About />
+      <Contact />
       <Footer />
     </div>
   );

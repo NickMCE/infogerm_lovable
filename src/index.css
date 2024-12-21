@@ -32,6 +32,33 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  body::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    border: 2px solid hsl(var(--primary));
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: cursor-animation 0.3s infinite alternate;
+    mix-blend-mode: difference;
+  }
+
+  @keyframes cursor-animation {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.5;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.8;
+    }
   }
 
   .glass {

@@ -95,6 +95,7 @@ const Bootcamps = () => {
           ))}
         </div>
       </div>
+      
     </section>
   );
 };

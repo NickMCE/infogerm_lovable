@@ -3,11 +3,49 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import { useState } from "react";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully!");
+
+    try {
+      const response = await fetch(
+        "https://hook.eu2.make.com/7qadus8c9zl44h7f9jrk0pa32u0rnw1w",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -38,12 +76,40 @@ const Contact = () => {
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Input placeholder="Your Name" required />
-              <Input type="email" placeholder="Your Email" required />
+              <Input
+                name="name"
+                placeholder="Your Name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <Input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
-            <Input placeholder="Subject" required />
-            <Textarea placeholder="Your Message" className="min-h-[150px]" required />
-            <Button type="submit" className="w-full hover-scale">Send Message</Button>
+            <Input
+              name="subject"
+              placeholder="Subject"
+              required
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            <Textarea
+              name="message"
+              placeholder="Your Message"
+              className="min-h-[150px]"
+              required
+              value={formData.message}
+              onChange={handleChange}
+            />
+            <Button type="submit" className="w-full hover-scale">
+              Send Message
+            </Button>
           </form>
         </motion.div>
       </div>

@@ -13,7 +13,7 @@ const stats = [
     icon: Briefcase,
   },
   {
-    number: "15+",
+    number: "5+",
     label: "Bootcamps Conducted",
     icon: GraduationCap,
   },

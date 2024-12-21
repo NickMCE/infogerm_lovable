@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Footer = () => {
@@ -52,22 +52,31 @@ const Footer = () => {
               Subscribe to our newsletter for the latest updates on bootcamps and internships.
             </p>
             <div className="flex gap-2">
+            <a href="https://www.instagram.com/infogerm/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="hover-scale">
-                <Github className="w-4 h-4" />
+                <Instagram className="w-4 h-4" />
               </Button>
+            </a>
+            <a href="https://x.com/info_germ" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="hover-scale">
                 <Twitter className="w-4 h-4" />
               </Button>
+            </a>
+            <a href="https://www.linkedin.com/company/infogerm" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="hover-scale">
                 <Linkedin className="w-4 h-4" />
               </Button>
-            </div>
+            </a>
+            <a href="https://www.facebook.com/infogerm" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="hover-scale">
+                <Facebook className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
+
           </div>
         </div>
 
-        <div className="text-center text-sm text-muted-foreground pt-8 border-t">
-          <p>&copy; {new Date().getFullYear()} InfoGerm. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );

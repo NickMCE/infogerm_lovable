@@ -40,9 +40,9 @@
     content: '';
     width: 32px;
     height: 32px;
-    border: 1px solid #8B0000;
+    border: 10px solid #8B0000;
     border-radius: 50%;
-    position: fixed;
+    position: static;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);

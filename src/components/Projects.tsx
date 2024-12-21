@@ -6,27 +6,20 @@ const projects = [
   {
     title: "Website Development",
     description: "Modern responsive websites built with React and Next.js",
-    icon: Monitor,
-    image: "photo-1488590528505-98d2b5aba04b"
-  },
+    icon: Monitor},
   {
     title: "Chatbot Development",
     description: "AI-powered chatbots for customer service and automation",
-    icon: MessageSquare,
-    image: "photo-1461749280684-dccba630e2f6"
+    icon: MessageSquare
   },
   {
     title: "App Development",
     description: "Cross-platform mobile applications for iOS and Android",
-    icon: Smartphone,
-    image: "photo-1487058792275-0ad4aaf24ca7"
-  },
+    icon: Smartphone  },
   {
     title: "UI/UX Designing",
     description: "User-centered design solutions for digital products",
-    icon: Palette,
-    image: "photo-1498050108023-c5249f4df085"
-  }
+    icon: Palette  }
 ];
 
 const Projects = () => {
@@ -68,13 +61,13 @@ const Projects = () => {
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                {/* <CardContent>
                   <img
                     src={`https://source.unsplash.com/${project.image}`}
                     alt={project.title}
                     className="w-full h-48 object-cover rounded-lg"
                   />
-                </CardContent>
+                </CardContent> */}
               </Card>
             </motion.div>
           ))}

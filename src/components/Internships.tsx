@@ -29,6 +29,18 @@ const internships = [
     description: "Specialize in front-end development using React.js. Build modern web applications.",
     tools: ["React.js", "Redux", "TypeScript", "Tailwind CSS"],
   },
+  {
+    title: "React Native Development",
+    duration: "8 weeks",
+    description: "Specialize in App development using React Native. Build modern mobile apps for both IOS and Android.",
+    tools: ["Android", "React", "IOS", "App"],
+  },
+  {
+    title: "UI UX Design",
+    duration: "8 weeks",
+    description: "Specialize in User Interface development using Figma and Penpot. Build modern web applications.",
+    tools: ["Figma", "Penpot", "Canva", "Adobe illustrator"],
+  },
 ];
 
 const Internships = () => {

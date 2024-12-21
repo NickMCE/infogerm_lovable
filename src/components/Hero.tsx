@@ -36,6 +36,19 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <img 
+            src="/lovable-uploads/081bb799-d873-45d3-ba53-30b4653d2edc.png" 
+            alt="InfoGerm Logo" 
+            className="w-32 h-32 mx-auto animate-float"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary inline-block mb-6">
             Welcome to InfoGerm

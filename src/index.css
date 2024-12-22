@@ -25,9 +25,9 @@
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.75rem;
     --black-color: #17181c;
-    --blue-color: #3e50b4;
+    --blue-color: #8B0000; /* Changed to dark red */
     --white-rbg-color: 255, 255, 255;
-    --green-rbg-color: 0, 212, 113;
+    --green-rbg-color: 139, 0, 0; /* Changed to dark red RGB values */
   }
  
   * {
@@ -56,7 +56,7 @@
     content: "";
     width: 40px;
     height: 40px;
-    border: 15px solid rgba(var(--white-rbg-color), .2);
+    border: 15px solid rgba(139, 0, 0, 0.2); /* Changed to dark red with opacity */
     border-radius: 50%;
     position: absolute;
     top: -25px;
@@ -66,11 +66,11 @@
 
   .cursor--expand {
     animation: cursor-animate-3 550ms forwards;
-    border: 10px solid rgb(var(--green-rbg-color));
+    border: 10px solid rgb(139, 0, 0); /* Changed to dark red */
   }
 
   .cursor--expand::after {
-    border: 15px solid rgba(var(--green-rbg-color), .3);
+    border: 15px solid rgba(139, 0, 0, 0.3); /* Changed to dark red with opacity */
   }
 
   @keyframes cursor-animate {

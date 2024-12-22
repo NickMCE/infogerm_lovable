@@ -35,6 +35,10 @@ const bootcamps = [
 ];
 
 const Bootcamps = () => {
+  const handleFollowClick = () => {
+    window.open('https://linkedin.com/company/infogerm/', '_blank');
+  };
+
   return (
     <section id="bootcamps" className="py-20 px-4 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
@@ -89,13 +93,17 @@ const Bootcamps = () => {
                     ))}
                   </div>
                 </div>
-                <Button className="w-full hover-scale">Enroll Now</Button>
+                <Button 
+                  className="w-full hover-scale"
+                  onClick={handleFollowClick}
+                >
+                  Follow Us
+                </Button>
               </Card>
             </motion.div>
           ))}
         </div>
       </div>
-      
     </section>
   );
 };

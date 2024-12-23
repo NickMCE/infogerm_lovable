@@ -33,4 +33,49 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  /* Interactive elements hover animations */
+  button, 
+  a, 
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .hover-scale,
+  .card {
+    @apply transition-transform duration-300 ease-in-out cursor-pointer;
+  }
+
+  button:hover, 
+  a:hover, 
+  [role="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="button"]:hover,
+  .hover-scale:hover,
+  .card:hover {
+    @apply scale-105;
+  }
+
+  /* Form inputs hover effect */
+  input:not([type="submit"]):not([type="button"]),
+  textarea,
+  select {
+    @apply transition-all duration-300 ease-in-out cursor-text;
+  }
+
+  input:not([type="submit"]):not([type="button"]):hover,
+  textarea:hover,
+  select:hover {
+    @apply ring-2 ring-primary/50;
+  }
+
+  /* Links underline animation */
+  a:not(.no-underline) {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 
+           after:bg-primary after:origin-bottom-right after:scale-x-0 
+           after:transition-transform after:duration-300 after:ease-in-out;
+  }
+
+  a:not(.no-underline):hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
 }

@@ -14,27 +14,16 @@ const App = () => {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (cursor) {
-        const x = e.clientX - 25;
-        const y = e.pageY - 25;
+        const x = e.clientX - 10;
+        const y = e.pageY - 10;
         cursor.setAttribute('style', `top: ${y}px; left: ${x}px;`);
       }
     };
 
-    const handleClick = () => {
-      cursor?.classList.add('cursor--expand');
-      setTimeout(() => {
-        cursor?.classList.remove('cursor--expand');
-      }, 500);
-    };
-
-    // Add event listeners to the document
     document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('click', handleClick);
 
-    // Clean up event listeners
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('click', handleClick);
     };
   }, []);
 

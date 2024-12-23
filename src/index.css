@@ -32,21 +32,5 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    cursor: none !important;
-    overflow-x: hidden;
-  }
-
-  a, button, input, select, textarea {
-    cursor: none !important;
-  }
-
-  .cursor {
-    width: 20px;
-    height: 20px;
-    background: #8B0000;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
   }
 }

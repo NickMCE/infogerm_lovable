@@ -13,7 +13,11 @@ const App = () => {
     const cursor = document.querySelector('.cursor');
 
     const handleMouseMove = (e: MouseEvent) => {
-      cursor?.setAttribute('style', `top: ${e.pageY - 25}px; left: ${e.pageX - 25}px;`);
+      if (cursor) {
+        const x = e.clientX - 25;
+        const y = e.pageY - 25;
+        cursor.setAttribute('style', `top: ${y}px; left: ${x}px;`);
+      }
     };
 
     const handleClick = () => {
@@ -23,9 +27,11 @@ const App = () => {
       }, 500);
     };
 
+    // Add event listeners to the document
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('click', handleClick);
 
+    // Clean up event listeners
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('click', handleClick);

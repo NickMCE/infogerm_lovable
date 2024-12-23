@@ -25,9 +25,9 @@
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.75rem;
     --black-color: #17181c;
-    --blue-color: #8B0000; /* Changed to dark red */
+    --blue-color: #8B0000;
     --white-rbg-color: 255, 255, 255;
-    --green-rbg-color: 139, 0, 0; /* Changed to dark red RGB values */
+    --green-rbg-color: 139, 0, 0;
   }
  
   * {
@@ -36,7 +36,12 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    cursor: none;
+    cursor: none !important;
+    overflow-x: hidden;
+  }
+
+  a, button, input, select, textarea {
+    cursor: none !important;
   }
 
   .cursor {
@@ -56,7 +61,7 @@
     content: "";
     width: 40px;
     height: 40px;
-    border: 15px solid rgba(139, 0, 0, 0.2); /* Changed to dark red with opacity */
+    border: 15px solid rgba(139, 0, 0, 0.2);
     border-radius: 50%;
     position: absolute;
     top: -25px;
@@ -66,11 +71,11 @@
 
   .cursor--expand {
     animation: cursor-animate-3 550ms forwards;
-    border: 10px solid rgb(139, 0, 0); /* Changed to dark red */
+    border: 10px solid rgb(139, 0, 0);
   }
 
   .cursor--expand::after {
-    border: 15px solid rgba(139, 0, 0, 0.3); /* Changed to dark red with opacity */
+    border: 15px solid rgba(139, 0, 0, 0.3);
   }
 
   @keyframes cursor-animate {

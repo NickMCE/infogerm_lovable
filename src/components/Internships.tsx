@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
@@ -6,40 +7,35 @@ import RegistrationForm from "./RegistrationForm";
 
 const internships = [
   {
-    title: "MERN Stack Development",
+    title: "Full Stack Development",
     duration: "12 weeks",
-    description: "Master MongoDB, Express.js, React.js, and Node.js to build full-stack web applications.",
-    tools: ["MongoDB", "Express.js", "React.js", "Node.js"],
-  },
-  {
-    title: "MEAN Stack Development",
-    duration: "12 weeks",
-    description: "Learn Angular for front-end, Node.js for server-side logic, and MongoDB for databases.",
-    tools: ["MongoDB", "Express.js", "Angular", "Node.js"],
-  },
-  {
-    title: "Node.js Development",
-    duration: "8 weeks",
-    description: "Focus solely on back-end development, building scalable REST APIs and managing databases.",
-    tools: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
-  },
-  {
-    title: "React.js Development",
-    duration: "8 weeks",
-    description: "Specialize in front-end development using React.js. Build modern web applications.",
-    tools: ["React.js", "Redux", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    title: "React Native Development",
-    duration: "8 weeks",
-    description: "Specialize in App development using React Native. Build modern mobile apps for both IOS and Android.",
-    tools: ["Android", "React", "IOS", "App"],
+    description: "Master both frontend and backend technologies to build complete web applications from scratch.",
+    tools: ["React", "Node.js", "MongoDB", "Express.js"],
   },
   {
     title: "UI UX Design",
     duration: "8 weeks",
-    description: "Specialize in User Interface development using Figma and Penpot. Build modern web applications.",
-    tools: ["Figma", "Penpot", "Canva", "Adobe illustrator"],
+    description: "Specialize in User Interface and User Experience design using industry-standard tools.",
+    tools: ["Figma", "Penpot", "Canva", "Adobe Illustrator"],
+  },
+  {
+    title: "Mobile Application Development (Android)",
+    duration: "10 weeks",
+    description: "Build native Android applications using modern development frameworks and tools.",
+    tools: ["Android Studio", "Kotlin", "Java", "Firebase"],
+  },
+  {
+    title: "Mobile Application Development (IOS)",
+    duration: "10 weeks",
+    description: "Create iOS applications using Swift and Xcode for iPhone and iPad platforms.",
+    tools: ["Xcode", "Swift", "UIKit", "Core Data"],
+  },
+  {
+    title: "Animation (Coming Soon)",
+    duration: "8 weeks",
+    description: "Learn 2D and 3D animation techniques using professional animation software.",
+    tools: ["After Effects", "Blender", "Maya", "Photoshop"],
+    comingSoon: true,
   },
 ];
 
@@ -90,12 +86,18 @@ const Internships = () => {
                     </span>
                   ))}
                 </div>
-                <Button 
-                  className="w-full hover-scale"
-                  onClick={() => setIsRegistrationOpen(true)}
-                >
-                  Register Now
-                </Button>
+                {!internship.comingSoon ? (
+                  <Button 
+                    className="w-full hover-scale"
+                    onClick={() => setIsRegistrationOpen(true)}
+                  >
+                    Register Now
+                  </Button>
+                ) : (
+                  <div className="w-full py-2 text-center text-muted-foreground font-medium">
+                    Coming Soon
+                  </div>
+                )}
               </Card>
             </motion.div>
           ))}
